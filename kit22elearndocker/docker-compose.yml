@@ -6,16 +6,15 @@ services:
     ports:
       - 8000:80
 
-  # apache:
-  #   # image: httpd:2.4
-  #   build:
-  #     context: ./docker
-  #     dockerfile: apache.dockerfile
-  #   image: cheesysunset/kit22learndocker:latest
-  #   ports:
-  #     - 8000:80
-    # volumes:
-    #   - ./html:/usr/local/apache2/htdocs
+  apache:
+    image: httpd:2.4
+    build:
+      context: ./docker
+      dockerfile: apache.dockerfile
+    ports:
+      - 8080:80
+    volumes:
+      - ./html:/usr/local/apache2/htdocs
 
   db:
     image: mariadb
