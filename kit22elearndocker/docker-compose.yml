@@ -1,9 +1,7 @@
-version: '3.1'
-
 services:
   app:
     build:
-      context: ./dockerg
+      context: ./docker
       dockerfile: app.dockerfile
     ports:
       - 8000:80
